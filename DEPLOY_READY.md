@@ -156,7 +156,7 @@ git push -u origin main
 2. New + → Web Service
 3. Connect GitHub repository
 4. Configure:
-   - **Name:** `space-chat-app`
+   - **Name:** `vega`
    - **Build:** `npm install`
    - **Start:** `npm start`
    - **Plan:** Free
@@ -173,7 +173,7 @@ NODE_ENV = production
 ### 4. Deploy!
 - Click "Create Web Service"
 - Wait 2-3 minutes
-- Get URL: `https://space-chat-app.onrender.com`
+- Get URL: `https://vega.onrender.com`
 
 ---
 

@@ -16,7 +16,7 @@
 
 1. เปิดเว็บ: [https://github.com/new](https://github.com/new)
 2. ตั้งค่า:
-   - **Repository name:** `space-chat-app` (หรือชื่ออื่นที่ชอบ)
+   - **Repository name:** `vega` (หรือชื่ออื่นที่ชอบ)
    - **Public** หรือ **Private** (แนะนำ Public ถ้าไม่มีข้อมูลลับ)
    - **ไม่ต้องติ๊ก** README, .gitignore, license
 3. คลิก **"Create repository"**
@@ -36,7 +36,7 @@ git push -u origin main
 
 **ตัวอย่าง:**
 ```bash
-git remote add origin https://github.com/yourusername/space-chat-app.git
+git remote add origin https://github.com/yourusername/vega.git
 git branch -M main
 git push -u origin main
 ```
@@ -55,7 +55,7 @@ git push -u origin main
 
 1. คลิก **"New +"** (มุมขวาบน)
 2. เลือก **"Web Service"**
-3. คลิก **"Connect GitHub"** → เลือก repository `space-chat-app`
+3. คลิก **"Connect GitHub"** → เลือก repository `vega`
 4. คลิก **"Connect"**
 
 #### 3.3 Configure Settings
@@ -63,7 +63,7 @@ git push -u origin main
 **กรอกข้อมูลต่อไปนี้:**
 
 ```
-Name: space-chat-app
+Name: vega
 
 Region: Oregon (US West)
 
@@ -114,7 +114,7 @@ Value: production
 
 ### คุณจะได้ URL แบบนี้:
 ```
-https://space-chat-app-xxxx.onrender.com
+https://vega-xxxx.onrender.com
 ```
 
 ### ทดสอบ Login:

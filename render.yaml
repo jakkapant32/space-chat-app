@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: space-chat-app
+    name: vega
     env: node
     buildCommand: npm install
     startCommand: npm start

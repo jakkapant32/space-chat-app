@@ -45,7 +45,7 @@ git push -u origin main
 2. **New +** → **Web Service**
 3. **Connect GitHub** repository ของคุณ
 4. **Configure:**
-   - **Name:** `space-chat-app` (หรือชื่อที่คุณต้องการ)
+   - **Name:** `vega` (หรือชื่อที่คุณต้องการ)
    - **Environment:** `Node`
    - **Build Command:** `npm install`
    - **Start Command:** `npm start`
@@ -72,7 +72,7 @@ NODE_ENV = production
 1. กด **Create Web Service**
 2. Render จะ build และ deploy อัตโนมัติ
 3. รอ 2-3 นาที
-4. เมื่อเสร็จจะได้ URL: `https://space-chat-app.onrender.com`
+4. เมื่อเสร็จจะได้ URL: `https://vega.onrender.com`
 
 ### 5️⃣ Initialize Database
 

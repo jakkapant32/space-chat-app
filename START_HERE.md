@@ -23,7 +23,7 @@
 ### **ขั้นที่ 1️⃣: สร้าง GitHub Repository**
 
 1. ไปที่: **[github.com/new](https://github.com/new)**
-2. ตั้งชื่อ: `space-chat-app`
+2. ตั้งชื่อ: `vega`
 3. เลือก: **Public** หรือ **Private**
 4. **ไม่ต้องติ๊ก** README, .gitignore
 5. คลิก: **"Create repository"**
@@ -43,7 +43,7 @@ git push -u origin main
 
 **ตัวอย่าง:**
 ```bash
-git remote add origin https://github.com/yourname/space-chat-app.git
+git remote add origin https://github.com/yourname/vega.git
 git branch -M main
 git push -u origin main
 ```
@@ -58,11 +58,11 @@ git push -u origin main
 
 #### **B. Create Web Service**
 1. คลิก **"New +"** → **"Web Service"**
-2. Connect repository: `space-chat-app`
+2. Connect repository: `vega`
 
 #### **C. Configure** 
 ```
-Name: space-chat-app
+Name: vega
 Region: Oregon (US West)
 Build: npm install
 Start: npm start
@@ -96,7 +96,7 @@ production
 
 ### **คุณจะได้:**
 ```
-🌐 URL: https://space-chat-app-xxxx.onrender.com
+🌐 URL: https://vega-xxxx.onrender.com
 ```
 
 ### **ทดสอบ Login:**

@@ -14,10 +14,10 @@
 
 1. ไปที่ [github.com/new](https://github.com/new)
 2. สร้าง repository ใหม่:
-   - **Name:** `space-chat-app` (หรือชื่ออื่นที่ชอบ)
+   - **Name:** `vega` (หรือชื่ออื่นที่ชอบ)
    - **Privacy:** Public หรือ Private (ขึ้นอยู่กับคุณ)
    - **ไม่ต้อง** เลือก README, .gitignore (มีอยู่แล้ว)
-3. คัดลอก URL ที่ได้ (จะเป็น `https://github.com/username/space-chat-app.git`)
+3. คัดลอก URL ที่ได้ (จะเป็น `https://github.com/username/vega.git`)
 
 4. **รันคำสั่งต่อไปนี้ใน Terminal:**
 
@@ -50,7 +50,7 @@ git push -u origin main
 3. คลิก **"New +"** → เลือก **"Web Service"**
 4. **Connect GitHub repository:**
    - คลิก "Connect GitHub"
-   - เลือก repository `space-chat-app`
+   - เลือก repository `vega`
    - คลิก "Connect"
 
 #### 2.2 Configure Web Service
@@ -59,7 +59,7 @@ git push -u origin main
 
 | Field | Value |
 |-------|-------|
-| **Name** | `space-chat-app` (หรือชื่ออื่นที่ชอบ) |
+| **Name** | `vega` (หรือชื่ออื่นที่ชอบ) |
 | **Region** | Oregon (US West) - ใกล้กับ database |
 | **Branch** | `main` |
 | **Root Directory** | (เว้นว่างไว้) |
@@ -97,7 +97,7 @@ git push -u origin main
 
 1. คุณจะได้ URL แบบนี้:
    ```
-   https://space-chat-app-xxxx.onrender.com
+   https://vega-xxxx.onrender.com
    ```
 
 2. **คลิก URL** → ลอง login:
