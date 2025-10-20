@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - แชทกับเพื่อน</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo">💬</div>
+                <h1>ยินดีต้อนรับ</h1>
+                <p>กรอกชื่อผู้ใช้และรหัสผ่านเพื่อเข้าสู่ระบบ</p>
+                <div id="errorMessage" class="error-message"></div>
+                <form id="loginForm">
+                    <input 
+                        type="text" 
+                        id="usernameInput" 
+                        placeholder="ชื่อผู้ใช้ " 
+                        required 
+                        maxlength="50"
+                        autocomplete="username"
+                    >
+                    <input 
+                        type="password" 
+                        id="passwordInput" 
+                        placeholder="รหัสผ่าน" 
+                        required 
+                        autocomplete="current-password"
+                    >
+                    <button type="submit" class="btn-primary">เข้าสู่ระบบ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Screen -->
+    <div id="chatScreen" class="screen">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        
+        <div class="chat-container">
+            <!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h2>💬 Chat App</h2>
+                </div>
+                <div class="online-users">
+                    <h3>💬 แชททั่วไป</h3>
+                    <div class="user-item" data-chat-type="general" id="generalChatBtn">
+                        <span style="margin-right: auto;">ห้องแชททั่วไป</span>
+                    </div>
+                    
+                    <h3 style="margin-top: 1.5rem;">✨ ผู้ใช้ออนไลน์ <span id="userCount" class="count">0</span></h3>
+                    <div id="usersList"></div>
+                </div>
+                <div class="sidebar-footer">
+                    <button id="logoutBtn" class="btn-secondary">ออกจากระบบ</button>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="main-chat">
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <h2 id="chatTitle">🌌 ห้องแชททั่วไป</h2>
+                        <p class="status">เชื่อมต่อแล้ว</p>
+                    </div>
+                    <div class="chat-actions">
+                        <button id="clearChatBtn" class="btn-clear-chat">
+                            🗑️ ล้างแชท
+                        </button>
+                    </div>
+                </div>
+
+                <div id="messagesContainer" class="messages-container">
+                    <div class="welcome-message">
+                        <h3>🎉 ยินดีต้อนรับสู่ห้องแชท!</h3>
+                        <p>เริ่มสนทนากับเพื่อนๆ ของคุณได้เลย</p>
+                    </div>
+                </div>
+
+                <div id="typingIndicator" class="typing-indicator"></div>
+
+                <div class="message-input-container">
+                    <form id="messageForm">
+                        <input 
+                            type="file" 
+                            id="imageInput" 
+                            accept="image/*" 
+                            style="display: none;"
+                        >
+                        <button type="button" id="imageBtn" class="btn-image" disabled title="แนบรูปภาพ">
+                            🖼️
+                        </button>
+                        <input 
+                            type="text" 
+                            id="messageInput" 
+                            placeholder="พิมพ์ข้อความ..." 
+                            autocomplete="off"
+                            disabled
+                        >
+                        <button type="submit" class="btn-send" disabled>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div id="imagePreviewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🖼️ Preview รูปภาพ</h3>
+                <button class="modal-close" id="closePreviewModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="previewImage" src="" alt="Preview">
+                <input 
+                    type="text" 
+                    id="imageCaption" 
+                    placeholder="เพิ่มคำบรรยาย (ไม่บังคับ)..." 
+                    maxlength="200"
+                >
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelImageBtn">ยกเลิก</button>
+                <button class="btn-primary" id="sendImageBtn">ส่งรูปภาพ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div id="imageViewerModal" class="modal">
+        <div class="modal-content image-viewer">
+            <button class="modal-close" id="closeViewerModal">&times;</button>
+            <img id="viewerImage" src="" alt="Full size">
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
