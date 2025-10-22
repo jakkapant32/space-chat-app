@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App - แชทกับเพื่อน</title>
+    <title>Vega - แชทกับเพื่อน</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -54,7 +54,7 @@
             <!-- Sidebar -->
             <div class="sidebar" id="sidebar">
                 <div class="sidebar-header">
-                    <h2>💬 Chat App</h2>
+                    <h2 id="userDisplayName">💬 Vega</h2>
                 </div>
                 <div class="online-users">
                     <h3>💬 แชททั่วไป</h3>
@@ -66,6 +66,10 @@
                     <div id="usersList"></div>
                 </div>
                 <div class="sidebar-footer">
+                    <button id="adminPanelBtn" class="btn-admin" style="display: none;">
+                        ⚙️ Admin Panel
+                    </button>
+                    <!-- Sleep mode disabled -->
                     <button id="logoutBtn" class="btn-secondary">ออกจากระบบ</button>
                 </div>
             </div>
@@ -78,8 +82,8 @@
                         <p class="status">เชื่อมต่อแล้ว</p>
                     </div>
                     <div class="chat-actions">
-                        <button id="clearChatBtn" class="btn-clear-chat">
-                            🗑️ ล้างแชท
+                        <button id="clearChatForMeBtn" class="btn-clear-chat-me" title="ล้างแชท">
+                            🔄
                         </button>
                     </div>
                 </div>
@@ -151,6 +155,51 @@
         <div class="modal-content image-viewer">
             <button class="modal-close" id="closeViewerModal">&times;</button>
             <img id="viewerImage" src="" alt="Full size">
+        </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminPanelModal" class="modal">
+        <div class="modal-content admin-panel">
+            <div class="modal-header">
+                <h3>⚙️ Admin Panel</h3>
+                <button class="modal-close" id="closeAdminModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="admin-section">
+                    <h4>🗑️ ล้างข้อมูลแชท</h4>
+                    <p>ลบข้อความทั้งหมดในระบบ (ไม่สามารถกู้คืนได้)</p>
+                    <button id="clearAllChatBtn" class="btn-danger">ล้างข้อมูลแชททั้งหมด</button>
+                </div>
+                
+                <div class="admin-section">
+                    <h4>👥 จัดการผู้ใช้</h4>
+                    <div id="usersListAdmin"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🔑 เปลี่ยนรหัสผ่าน</h3>
+                <button class="modal-close" id="closePasswordModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="passwordUserInfo"></div>
+                <input 
+                    type="password" 
+                    id="newPasswordInput" 
+                    placeholder="รหัสผ่านใหม่ (อย่างน้อย 6 ตัวอักษร)" 
+                    minlength="6"
+                >
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelPasswordBtn">ยกเลิก</button>
+                <button class="btn-primary" id="savePasswordBtn">บันทึก</button>
+            </div>
         </div>
     </div>
 
