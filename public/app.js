@@ -715,9 +715,7 @@ function handleClearChatForMe() {
     
     let message;
     if (canDeleteFromDB) {
-        message = currentChat === 'general' 
-            ? 'คุณต้องการลบแชททั่วไปทั้งหมดจากฐานข้อมูลหรือไม่? (ไม่สามารถกู้คืนได้)'
-            : `คุณต้องการลบแชทกับ ${currentChatPartner} ทั้งหมดจากฐานข้อมูลหรือไม่? (ไม่สามารถกู้คืนได้)`;
+        message = 'คุณแน่ใจ?';
     } else {
         message = currentChat === 'general' 
             ? 'คุณต้องการล้างแชททั่วไปในฝั่งของคุณหรือไม่? (เฉพาะคุณเท่านั้นที่จะเห็นการเปลี่ยนแปลง)'
